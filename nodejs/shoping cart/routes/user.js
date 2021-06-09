@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var productHelper=require('../helpers/product-helpers')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
-  let products=[
+ /* let products=[
     {
       name:"iphone 11",
       category:"Mobile",
@@ -32,9 +33,12 @@ router.get('/', function(req, res, next) {
     }
     
 
-  ]
+  ]*/
 
-  res.render('index', {products,admin:false});
+  productHelper.getAllProduct().then((products)=>{
+    console.log(products);
+    res.render('user/view-products',{products,admin:true})
+  })
 });
 
 module.exports = router;
