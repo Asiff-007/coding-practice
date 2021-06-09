@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
    
    //insert into db
    //calling addproduct function for insertion 
-   productHelper.addProduct(req.body,(id)=>{
+   productHelper.addProduct(req.body).then((id)=>{
 
     //image storing
      let images=req.files.image
