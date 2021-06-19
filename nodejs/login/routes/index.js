@@ -14,7 +14,14 @@ router.get('/', function(req, res, next) {
 
 //submit action
 
+router.get('/api/login/',controller.show);
 
-router.post('/api/login',controller.find);
+router.post('/api/login/',controller.create);
+
+router.post('/api/login/find',controller.find);
+
+
+
+
 
 module.exports = router;

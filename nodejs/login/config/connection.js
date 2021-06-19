@@ -2,7 +2,7 @@ const mongoose=require('mongoose')
 
 //mongodb connect fuction.it work when call connect in app.js
 const connectDB=async()=>{
-    const url='mongodb://127.0.0.1:27017/user'
+    const url='mongodb://localhost:27017/user'
     const dbname='user'
 
 try{
